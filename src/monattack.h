@@ -42,6 +42,7 @@ void plant              (monster *z, int index);
 void disappear          (monster *z, int index);
 void formblob           (monster *z, int index);
 void callblobs          (monster *z, int index);
+void brawl_aura         (monster *z, int index);
 void jackson            (monster *z, int index);
 void dance              (monster *z, int index);
 void dogthing           (monster *z, int index);

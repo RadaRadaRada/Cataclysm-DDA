@@ -929,8 +929,8 @@ class player : public Character, public JsonSerializer, public JsonDeserializer
         void shift_destination(int shiftx, int shifty);
 
         // Library functions
-        double logistic(double t) const;
-        double logistic_range(int min, int max, int pos) const;
+        static double logistic(double t);
+        static double logistic_range(int min, int max, int pos);
 
         /**
          * Global position, expressed in map square coordinate system

@@ -1538,7 +1538,7 @@
     "death_function":"NORMAL",
     "special_attacks":[["BITE", 5], ["GRAB", 7]],
     "description":"A human body, swaying as it moves, an unstoppable rage is visible in its oily black eyes.",
-    "flags":["SEES", "HEARS", "SMELLS", "STUMBLES", "WARM", "BASHES", "GROUP_BASH", "POISON", "BLEED", "NO_BREATHE", "REVIVES", "BONES", "PUSH_MON"],
+    "flags":["SEES", "HEARS", "SMELLS", "STUMBLES", "WARM", "BASHES", "GROUP_BASH", "POISON", "BLEED", "NO_BREATHE", "REVIVES", "BONES", "PUSH_MON", "HUMANOID"],
     "categories":["CLASSIC"]
     },{
     "type" : "MONSTER",
@@ -1572,7 +1572,7 @@
     "death_function":["NORMAL"],
     "special_attacks":[["BITE", 5]],
     "description":"Stumbling as it moves, this corpse of an overweight human regards its surroundings with an empty black gaze.",
-    "flags":["SEES", "HEARS", "SMELLS", "STUMBLES", "WARM", "BASHES", "GROUP_BASH", "POISON", "BLEED", "NO_BREATHE", "REVIVES", "BONES", "FAT", "PUSH_MON"],
+    "flags":["SEES", "HEARS", "SMELLS", "STUMBLES", "WARM", "BASHES", "GROUP_BASH", "POISON", "BLEED", "NO_BREATHE", "REVIVES", "BONES", "FAT", "PUSH_MON", "HUMANOID"],
     "categories":["CLASSIC"]
     },{
     "type" : "MONSTER",
@@ -1602,7 +1602,7 @@
     "death_function":["NORMAL"],
     "special_attacks":[["BITE", 5], ["GRAB", 7]],
     "description":"Once an athletic human, now a brutal monster.  Its facial features are twisted into an expression of pure rage.",
-    "flags":["SEES", "HEARS", "SMELLS", "STUMBLES", "WARM", "BASHES", "GROUP_BASH", "POISON", "BLEED", "NO_BREATHE", "REVIVES", "BONES", "PUSH_MON"],
+    "flags":["SEES", "HEARS", "SMELLS", "STUMBLES", "WARM", "BASHES", "GROUP_BASH", "POISON", "BLEED", "NO_BREATHE", "REVIVES", "BONES", "PUSH_MON", "HUMANOID"],
     "categories":["CLASSIC"]
     },{
     "type" : "MONSTER",
@@ -1632,7 +1632,7 @@
     "death_function":["NORMAL"],
     "special_attacks":[["BITE", 5]],
     "description":"This human corpse drags itself along slowly with its arms.  Its legs are damaged beyond repair.",
-    "flags":["SEES", "HEARS", "SMELLS", "STUMBLES", "WARM", "BASHES", "GRABS", "POISON", "BLEED", "NO_BREATHE", "REVIVES", "BONES"],
+    "flags":["SEES", "HEARS", "SMELLS", "STUMBLES", "WARM", "BASHES", "GRABS", "POISON", "BLEED", "NO_BREATHE", "REVIVES", "BONES", "HUMANOID"],
     "categories":["CLASSIC"]
     },{
     "type" : "MONSTER",
@@ -1662,7 +1662,7 @@
     "death_function":["NORMAL"],
     "special_attacks":[["GRAB", 7]],
     "description":"This zombie's face and body is completely covered by a protective suit.  It wanders around, unsteadily.",
-    "flags":["SEES", "HEARS", "STUMBLES", "WARM", "BASHES", "GROUP_BASH", "POISON", "BLEED", "ACIDPROOF", "NO_BREATHE", "REVIVES", "BONES", "PUSH_MON"],
+    "flags":["SEES", "HEARS", "STUMBLES", "WARM", "BASHES", "GROUP_BASH", "POISON", "BLEED", "ACIDPROOF", "NO_BREATHE", "REVIVES", "BONES", "PUSH_MON", "HUMANOID"],
     "categories":["CLASSIC"]
     },{
     "type" : "MONSTER",
@@ -1692,7 +1692,7 @@
     "death_function":["NORMAL"],
     "special_attacks":[["GRAB", 7]],
     "description":"A decaying human body clad in tattered firefighting gear.  It staggers aimlessly, reeking of smoke and decay.",
-    "flags":["SEES", "HEARS", "STUMBLES", "WARM", "BASHES", "GROUP_BASH", "POISON", "BLEED", "ACIDPROOF", "NO_BREATHE", "REVIVES", "BONES", "PUSH_MON"],
+    "flags":["SEES", "HEARS", "STUMBLES", "WARM", "BASHES", "GROUP_BASH", "POISON", "BLEED", "ACIDPROOF", "NO_BREATHE", "REVIVES", "BONES", "PUSH_MON", "HUMANOID"],
     "categories":["CLASSIC"]
     },{
     "type" : "MONSTER",
@@ -1722,7 +1722,7 @@
     "death_function":["NORMAL"],
     "special_attacks":[["SHRIEK", 20], ["BITE", 5], ["GRAB", 7]],
     "description":"Still wearing the tattered remnants of improvised armor and weaponry, it is plain to see that this zombie was once a survivor like you.",
-    "flags":["SEES", "HEARS", "SMELLS", "WARM", "BASHES", "GROUP_BASH", "POISON", "NO_BREATHE", "REVIVES", "BONES", "PUSH_MON"]
+    "flags":["SEES", "HEARS", "SMELLS", "WARM", "BASHES", "GROUP_BASH", "POISON", "NO_BREATHE", "REVIVES", "BONES", "PUSH_MON", "HUMANOID"]
     },{
     "type" : "MONSTER",
     "id" : "mon_zombie_rot",
@@ -1751,7 +1751,7 @@
     "death_function":["NORMAL"],
     "special_attacks":[["BITE", 2], ["GRAB", 7]],
     "description":"A once-dead human corpse.  Its discolored swollen flesh is riddled with festering wounds and open sores.",
-    "flags":["SEES", "HEARS", "SMELLS", "STUMBLES", "WARM", "BASHES", "GROUP_BASH", "POISON", "BLEED", "NO_BREATHE", "REVIVES", "BONES", "PUSH_MON"],
+    "flags":["SEES", "HEARS", "SMELLS", "STUMBLES", "WARM", "BASHES", "GROUP_BASH", "POISON", "BLEED", "NO_BREATHE", "REVIVES", "BONES", "PUSH_MON", "HUMANOID"],
     "categories":["CLASSIC"]
     },{
     "type" : "MONSTER",
@@ -1781,7 +1781,7 @@
     "death_function":["NORMAL"],
     "special_attacks":[["GRAB", 7]],
     "description":"A human body covered by a weather-beaten and badly damaged set of riot gear.",
-    "flags":["SEES", "HEARS", "SMELLS", "STUMBLES", "WARM", "BASHES", "GROUP_BASH", "POISON", "BLEED", "NO_BREATHE", "REVIVES", "BONES", "PUSH_MON"],
+    "flags":["SEES", "HEARS", "SMELLS", "STUMBLES", "WARM", "BASHES", "GROUP_BASH", "POISON", "BLEED", "NO_BREATHE", "REVIVES", "BONES", "PUSH_MON", "HUMANOID"],
     "categories":["CLASSIC"]
     },{
     "type" : "MONSTER",
@@ -1811,7 +1811,7 @@
     "death_function":["NORMAL"],
     "special_attacks":[["SHRIEK", 10], ["GRAB", 7]],
     "description":"An elongated human body with a swollen chest and a gaping hole where its jaw used to be.",
-    "flags":["SEES", "HEARS", "SMELLS", "STUMBLES", "WARM", "BASHES", "GROUP_BASH", "POISON", "NO_BREATHE", "REVIVES", "BONES", "PUSH_MON"]
+    "flags":["SEES", "HEARS", "SMELLS", "STUMBLES", "WARM", "BASHES", "GROUP_BASH", "POISON", "NO_BREATHE", "REVIVES", "BONES", "PUSH_MON", "HUMANOID"]
     },{
     "type" : "MONSTER",
     "id" : "mon_zombie_acidic",
@@ -1844,7 +1844,7 @@
     "special_attacks":[["ACID_BARF", 10]],
     "death_function":["ACID", "NORMAL"],
     "description":"A sickly-looking dead one.  Its skin looks especially thin, with a sticky, yellow fluid flowing through the clearly visible veins.",
-    "flags":["SEES", "HEARS", "SMELLS", "STUMBLES", "WARM", "BASHES", "GROUP_BASH", "POISON", "ACIDPROOF", "ACID_BLOOD", "NO_BREATHE", "REVIVES", "BONES", "PUSH_MON"]
+    "flags":["SEES", "HEARS", "SMELLS", "STUMBLES", "WARM", "BASHES", "GROUP_BASH", "POISON", "ACIDPROOF", "ACID_BLOOD", "NO_BREATHE", "REVIVES", "BONES", "PUSH_MON", "HUMANOID"]
     },{
     "type" : "MONSTER",
     "id" : "mon_zombie_spitter",
@@ -1877,7 +1877,7 @@
     "death_function":["ACID", "NORMAL"],
     "special_attacks":[["ACID", 20]],
     "description":"A hunched human body with its eyes pushed up into its forehead and drooping cheeks, most of its face is occupied by a puckered mouth.  Its stomach is swollen and nearly translucent, with a sickly yellow tint.",
-    "flags":["SEES", "HEARS", "SMELLS", "STUMBLES", "WARM", "BASHES", "GROUP_BASH", "POISON", "ACIDPROOF", "ACID_BLOOD", "NO_BREATHE", "REVIVES", "BONES", "PUSH_MON"]
+    "flags":["SEES", "HEARS", "SMELLS", "STUMBLES", "WARM", "BASHES", "GROUP_BASH", "POISON", "ACIDPROOF", "ACID_BLOOD", "NO_BREATHE", "REVIVES", "BONES", "PUSH_MON", "HUMANOID"]
     },{
     "type" : "MONSTER",
     "id" : "mon_zombie_corrosive",
@@ -1908,7 +1908,7 @@
     "special_attacks":[["ACID_ACCURATE", 3]],
     "special_when_hit":["ACIDSPLASH", 50],
     "description":"This body has swollen to immense proportions, but still manages to hold itself together with semi-congealed acid all over its bloated body.  It clumsily moves around, but attacks with a large reserve of acid.",
-    "flags":["SEES", "HEARS", "SMELLS", "STUMBLES", "WARM", "BASHES", "GROUP_BASH", "POISON", "ACIDPROOF", "ACID_BLOOD", "NO_BREATHE", "REVIVES", "BONES", "PUSH_MON"]
+    "flags":["SEES", "HEARS", "SMELLS", "STUMBLES", "WARM", "BASHES", "GROUP_BASH", "POISON", "ACIDPROOF", "ACID_BLOOD", "NO_BREATHE", "REVIVES", "BONES", "PUSH_MON", "HUMANOID"]
     },{
     "type" : "MONSTER",
     "id" : "mon_zombie_electric",
@@ -1939,7 +1939,7 @@
     "special_attacks":[["SHOCKSTORM", 25], ["BITE", 5]],
     "special_when_hit":["ZAPBACK", 100],
     "description":"A human body with pale blue flesh, crackling with electrical energy.",
-    "flags":["SEES", "HEARS", "SMELLS", "STUMBLES", "WARM", "BASHES", "GROUP_BASH", "POISON", "ELECTRIC", "CBM_CIV", "NO_BREATHE",  "REVIVES", "BONES", "PUSH_MON"]
+    "flags":["SEES", "HEARS", "SMELLS", "STUMBLES", "WARM", "BASHES", "GROUP_BASH", "POISON", "ELECTRIC", "CBM_CIV", "NO_BREATHE",  "REVIVES", "BONES", "PUSH_MON", "HUMANOID"]
     },{
     "type" : "MONSTER",
     "id" : "mon_zombie_smoker",
@@ -1967,7 +1967,7 @@
     "death_function":"SMOKEBURST",
     "special_attacks":[["SMOKECLOUD", 1], ["BITE", 5]],
     "description":"A blackened and twisted naked human body, strips of flesh hang from its body, and it emits a constant haze of thick black smoke.",
-    "flags":["SEES", "HEARS", "SMELLS", "STUMBLES", "WARM", "BASHES", "GROUP_BASH", "POISON", "HARDTOSHOOT", "NO_BREATHE", "REVIVES", "BONES", "PUSH_MON"]
+    "flags":["SEES", "HEARS", "SMELLS", "STUMBLES", "WARM", "BASHES", "GROUP_BASH", "POISON", "HARDTOSHOOT", "NO_BREATHE", "REVIVES", "BONES", "PUSH_MON", "HUMANOID"]
     },{
     "type" : "MONSTER",
     "id" : "mon_zombie_swimmer",
@@ -1996,7 +1996,7 @@
     "death_function":["NORMAL"],
     "special_attacks":[["BITE", 5], ["GRAB", 7]],
     "description":"A slick and glistening human body.  Its hands and feet are webbed, and it is clad in swimwear.",
-    "flags":["SEES", "HEARS", "SMELLS", "STUMBLES", "WARM", "BASHES", "GROUP_BASH", "POISON", "NO_BREATHE", "BLEED", "SWIMS", "REVIVES", "BONES", "PUSH_MON"]
+    "flags":["SEES", "HEARS", "SMELLS", "STUMBLES", "WARM", "BASHES", "GROUP_BASH", "POISON", "NO_BREATHE", "BLEED", "SWIMS", "REVIVES", "BONES", "PUSH_MON", "HUMANOID"]
     },{
     "type" : "MONSTER",
     "id" : "mon_zombie_dog",
@@ -2145,7 +2145,36 @@
     "death_function":["NORMAL"],
     "special_attacks":[["SMASH", 30], ["GRAB", 7]],
     "description":"Its entire body bulges with distended muscles and swollen, festering wounds.",
-    "flags":["SEES", "HEARS", "SMELLS", "STUMBLES", "WARM", "BASHES", "GROUP_BASH", "POISON", "NO_BREATHE", "REVIVES", "BONES", "PUSH_MON"]
+    "flags":["SEES", "HEARS", "SMELLS", "STUMBLES", "WARM", "BASHES", "GROUP_BASH", "POISON", "NO_BREATHE", "REVIVES", "BONES", "PUSH_MON", "HUMANOID"]
+    },{
+    "type" : "MONSTER",
+    "id" : "mon_zombie_stalwart",
+    "name": "stalwart zombie",
+    "species":"ZOMBIE",
+    "default_faction":"zombie",
+    "symbol":"Z",
+    "color":"red",
+    "size":"Large",
+    "material":"flesh",
+    "diff":30,
+    "aggression":100,
+    "morale":100,
+    "speed":105,
+    "melee_skill":6,
+    "melee_dice":4,
+    "melee_dice_sides":8,
+    "melee_cut":2,
+    "dodge":4,
+    "armor_bash":8,
+    "armor_cut":4,
+    "vision_day":50,
+    "vision_night":4,
+    "death_drops": "default_zombie_death_drops",
+    "hp":240,
+    "death_function":["NORMAL"],
+    "special_attacks":[["SMASH", 30], ["GRAB", 7], ["BRAWL_AURA", 10]],
+    "description":"Towering among others, this zombie's dark leathery skin stretches across it's unnaturally muscular frame. It moves with unnatural fluidity and regards it's surroundings with relaxed, empty expression.",
+    "flags":["SEES", "HEARS", "SMELLS", "STUMBLES", "WARM", "BASHES", "GROUP_BASH", "POISON", "NO_BREATHE", "REVIVES", "BONES", "PUSH_MON", "HUMANOID"]
     },{
     "type" : "MONSTER",
     "id" : "mon_zombie_hulk",
@@ -2174,7 +2203,7 @@
     "death_function":["NORMAL"],
     "special_attacks":[["SMASH", 20]],
     "description":"A human body now swollen to the size of six men, with arms as wide as a trash can.",
-    "flags":["SEES", "HEARS", "SMELLS", "STUMBLES", "WARM", "BASHES", "DESTROYS", "POISON", "ATTACKMON", "LEATHER", "NO_BREATHE", "REVIVES", "BONES", "FAT", "PUSH_MON"]
+    "flags":["SEES", "HEARS", "SMELLS", "STUMBLES", "WARM", "BASHES", "DESTROYS", "POISON", "ATTACKMON", "LEATHER", "NO_BREATHE", "REVIVES", "BONES", "FAT", "PUSH_MON", "HUMANOID"]
     },{
     "type" : "MONSTER",
     "id" : "mon_zombie_fungus",
@@ -2203,7 +2232,7 @@
     "death_function":["NORMAL"],
     "special_attacks":[["FUNGUS", 200], ["BITE", 5]],
     "description":"Once human, fungal tendrils now sprout from its mouth, eyes, and other orifices, holding together a shambling mass of mold-covered flesh.",
-    "flags":["SMELLS", "STUMBLES", "WARM", "BASHES", "GROUP_BASH", "POISON", "NO_BREATHE", "BONES", "PUSH_MON"]
+    "flags":["SMELLS", "STUMBLES", "WARM", "BASHES", "GROUP_BASH", "POISON", "NO_BREATHE", "BONES", "PUSH_MON", "HUMANOID"]
     },{
     "type" : "MONSTER",
     "id" : "mon_boomer",
@@ -2236,7 +2265,7 @@
     "death_function":["BOOMER"],
     "special_attacks":[["BOOMER", 20]],
     "description":"A rotund human body, bloated beyond belief and layered in rolls of fat.  It emits a horrible odor, and a putrid pink sludge dribbles from its mouth.",
-    "flags":["SEES", "HEARS", "SMELLS", "STUMBLES", "WARM", "BASHES", "GROUP_BASH", "POISON", "NO_BREATHE", "REVIVES", "BILE_BLOOD", "BONES", "FAT", "PUSH_MON"]
+    "flags":["SEES", "HEARS", "SMELLS", "STUMBLES", "WARM", "BASHES", "GROUP_BASH", "POISON", "NO_BREATHE", "REVIVES", "BILE_BLOOD", "BONES", "FAT", "PUSH_MON", "HUMANOID"]
     },{
     "type" : "MONSTER",
     "id" : "mon_boomer_huge",
@@ -2265,7 +2294,7 @@
     "death_function":["BOOMER_GLOW"],
     "special_attacks":[["BOOMER_GLOW", 20]],
     "description":"This boomer, normally swollen and ready to burst, has strengthened and solidified.  The bile dribbling from its mouth also appears to have changed...",
-    "flags":["SEES", "GOODHEARING", "SMELLS", "STUMBLES", "WARM", "BASHES", "GROUP_BASH", "POISON", "NO_BREATHE", "REVIVES", "BILE_BLOOD", "BONES", "FAT", "PUSH_MON"]
+    "flags":["SEES", "GOODHEARING", "SMELLS", "STUMBLES", "WARM", "BASHES", "GROUP_BASH", "POISON", "NO_BREATHE", "REVIVES", "BILE_BLOOD", "BONES", "FAT", "PUSH_MON", "HUMANOID"]
     },{
     "type" : "MONSTER",
     "id" : "mon_boomer_fungus",
@@ -2294,7 +2323,7 @@
     "death_function":["FUNGUS", "NORMAL"],
     "special_attacks":[["FUNGUS", 100], ["BOOMER", 20]],
     "description":"A rotund and bloated human body with pasty, fungus-ridden flesh.  Its mouth drips with a frothing gray sludge.",
-    "flags":["SEES", "HEARS", "SMELLS", "STUMBLES", "WARM", "BASHES", "GROUP_BASH", "POISON", "NO_BREATHE", "BONES", "FAT", "PUSH_MON"]
+    "flags":["SEES", "HEARS", "SMELLS", "STUMBLES", "WARM", "BASHES", "GROUP_BASH", "POISON", "NO_BREATHE", "BONES", "FAT", "PUSH_MON", "HUMANOID"]
     },{
     "type" : "MONSTER",
     "id" : "mon_zombie_gasbag",
@@ -2323,7 +2352,7 @@
     "death_function":["GAS"],
     "special_attacks":[["SUICIDE", 20]],
     "description":"With its gray skin swollen to near rupture with putrid gas, this cyst covered zombie looks like it could violently burst under the slightest of disturbances.",
-    "flags":["SEES", "HEARS", "SMELLS", "STUMBLES", "WARM", "POISON", "LEAKSGAS", "NO_BREATHE", "REVIVES", "BONES"]
+    "flags":["SEES", "HEARS", "SMELLS", "STUMBLES", "WARM", "POISON", "LEAKSGAS", "NO_BREATHE", "REVIVES", "BONES", "HUMANOID"]
     },{
     "type" : "MONSTER",
     "id" : "mon_skeleton",
@@ -2352,7 +2381,7 @@
     "death_function":["NORMAL"],
     "special_attacks":[["BITE", 5]],
     "description":"With its skin so tight the cracked bones are visible beneath it, covered in scar tissue and coils of scabbed black liquid and with eyes so deeply sunken into its skull they are barely visible, it's a wonder this once-human creature can move at all.",
-    "flags":["SEES", "HEARS", "BLEED", "HARDTOSHOOT", "REVIVES", "NO_BREATHE"]
+    "flags":["SEES", "HEARS", "BLEED", "HARDTOSHOOT", "REVIVES", "NO_BREATHE", "HUMANOID"]
     },{
     "type" : "MONSTER",
     "id" : "mon_zombie_necro",
@@ -2381,7 +2410,7 @@
     "death_function":["NORMAL"],
     "special_attacks":[["RESURRECT", 0]],
     "description":"A twisted mockery of the human form, emaciated, with jet black skin and glowing red eyes.  It is somehow painful to look at, awakening fears deep within your psyche, and even the air around it seems more sinister, somehow darker and more dangerous.",
-    "flags":["SEES", "HEARS", "SMELLS", "STUMBLES", "WARM", "BASHES", "POISON", "NO_BREATHE", "REVIVES", "BONES"],
+    "flags":["SEES", "HEARS", "SMELLS", "STUMBLES", "WARM", "BASHES", "POISON", "NO_BREATHE", "REVIVES", "BONES", "HUMANOID"],
     "anger_triggers":["HURT", "PLAYER_CLOSE", "PLAYER_WEAK"]
     },{
     "type" : "MONSTER",
@@ -2412,7 +2441,7 @@
     "special_attacks":[["SCIENCE", 20]],
     "starting_ammo" : { "bot_manhack": 3 },
     "description":"Apart from the jet black eyes it would be easy to believe this scientist was still alive.  Clad in a tattered lab coat, it looks to have some measure of situational awareness and resourcefulness.",
-    "flags":["SEES", "HEARS", "SMELLS", "STUMBLES", "WARM", "BASHES", "POISON", "BLEED", "CBM_SCI", "ACIDPROOF", "NO_BREATHE", "REVIVES", "BONES", "PUSH_MON"]
+    "flags":["SEES", "HEARS", "SMELLS", "STUMBLES", "WARM", "BASHES", "POISON", "BLEED", "CBM_SCI", "ACIDPROOF", "NO_BREATHE", "REVIVES", "BONES", "PUSH_MON", "HUMANOID"]
     },{
     "type" : "MONSTER",
     "id" : "mon_zombie_soldier",
@@ -2441,7 +2470,7 @@
     "death_function":["NORMAL"],
     "special_attacks":[["BITE", 5]],
     "description":"Once a soldier, it is dressed head to toe in combat gear and carries itself rather steadily for a zombie.",
-    "flags":["SEES", "HEARS", "SMELLS", "WARM", "BASHES", "GROUP_BASH", "POISON", "BLEED", "NO_BREATHE", "REVIVES", "BONES", "PUSH_MON"],
+    "flags":["SEES", "HEARS", "SMELLS", "WARM", "BASHES", "GROUP_BASH", "POISON", "BLEED", "NO_BREATHE", "REVIVES", "BONES", "PUSH_MON", "HUMANOID"],
     "categories":["CLASSIC"]
     },{
     "type" : "MONSTER",
@@ -2478,7 +2507,7 @@
     "death_function":["DETONATE"],
     "special_attacks":[["GRENADIER", 6]],
     "description":"Once a soldier, it is dressed head to toe in combat gear.  Its hands constantly fumble at its many pouches.",
-    "flags":["SEES", "HEARS", "SMELLS", "WARM", "BASHES", "GROUP_BASH", "POISON", "BLEED", "NO_BREATHE", "REVIVES", "BONES", "PUSH_MON"]
+    "flags":["SEES", "HEARS", "SMELLS", "WARM", "BASHES", "GROUP_BASH", "POISON", "BLEED", "NO_BREATHE", "REVIVES", "BONES", "PUSH_MON", "HUMANOID"]
     },{
     "type" : "MONSTER",
     "id" : "mon_zombie_grenadier_elite",
@@ -2514,7 +2543,7 @@
     "death_function":["DETONATE"],
     "special_attacks":[["GRENADIER_ELITE", 3]],
     "description":"Once a soldier, it is dressed head to toe in combat gear and wearing a MOLLE pack.  Its hands quickly open and close its many pouches.",
-    "flags":["SEES", "HEARS", "SMELLS", "WARM", "BASHES", "GROUP_BASH", "POISON", "BLEED", "NO_BREATHE", "REVIVES", "BONES", "PUSH_MON"]
+    "flags":["SEES", "HEARS", "SMELLS", "WARM", "BASHES", "GROUP_BASH", "POISON", "BLEED", "NO_BREATHE", "REVIVES", "BONES", "PUSH_MON", "HUMANOID"]
     },{
     "type" : "MONSTER",
     "id" : "mon_zombie_grabber",
@@ -2547,7 +2576,7 @@
     "death_function":["NORMAL"],
     "special_attacks":[["BITE", 5]],
     "description":"A deformed human body, once living.  Its arms dangle from its sides like the limbs of some skinless ape, mindlessly groping at their surroundings.",
-    "flags":["SEES", "HEARS", "SMELLS", "STUMBLES", "WARM", "BASHES", "GROUP_BASH", "POISON", "BLEED", "GRABS", "NO_BREATHE", "REVIVES", "BONES", "PUSH_MON"]
+    "flags":["SEES", "HEARS", "SMELLS", "STUMBLES", "WARM", "BASHES", "GROUP_BASH", "POISON", "BLEED", "GRABS", "NO_BREATHE", "REVIVES", "BONES", "PUSH_MON", "HUMANOID"]
     },{
     "type" : "MONSTER",
     "id" : "mon_zombie_grappler",
@@ -2577,7 +2606,7 @@
     "death_function":["NORMAL"],
     "special_attacks":[["RANGED_PULL", 20], ["GRAB_DRAG", 3], ["BITE", 5]],
     "description":"An undead humanoid, its elongated arms drag along the ground as it moves.  It looks to almost have a hunch from the swollen back and shoulder muscles tearing though its skin.",
-    "flags":["SEES", "HEARS", "SMELLS", "STUMBLES", "WARM", "BASHES", "GROUP_BASH", "POISON", "BLEED", "NO_BREATHE", "REVIVES", "BONES", "PUSH_MON"]
+    "flags":["SEES", "HEARS", "SMELLS", "STUMBLES", "WARM", "BASHES", "GROUP_BASH", "POISON", "BLEED", "NO_BREATHE", "REVIVES", "BONES", "PUSH_MON", "HUMANOID"]
     },{
     "type" : "MONSTER",
     "id" : "mon_zombie_master",
@@ -2606,7 +2635,7 @@
     "death_function":["NORMAL"],
     "special_attacks":[["UPGRADE", 10]],
     "description":"Once human, its features have tightened, its lips pulled back into an unnatural grin, revealing rows of blackened teeth beneath its large, piercing eyes.  It stands tall and its movements are fluid and tightly controlled.  A feeling of danger permeates the air around it, and the light that falls on it seems somehow harsher and more glaring.",
-    "flags":["SEES", "HEARS", "SMELLS", "WARM", "BASHES", "POISON", "NO_BREATHE", "REVIVES", "BONES"],
+    "flags":["SEES", "HEARS", "SMELLS", "WARM", "BASHES", "POISON", "NO_BREATHE", "REVIVES", "BONES", "HUMANOID"],
     "anger_triggers":["HURT", "PLAYER_CLOSE", "PLAYER_WEAK"]
     },{
     "type" : "MONSTER",
@@ -2641,7 +2670,7 @@
     "death_function":["NORMAL"],
     "special_attacks":[["BITE", 5]],
     "description":"A deformed human body, its skin has been transformed into one thick, calloused envelope of scar tissue.",
-    "flags":["HEARS", "SMELLS", "STUMBLES", "WARM", "BASHES", "GROUP_BASH", "POISON", "NO_BREATHE", "REVIVES", "BONES", "PUSH_MON"]
+    "flags":["HEARS", "SMELLS", "STUMBLES", "WARM", "BASHES", "GROUP_BASH", "POISON", "NO_BREATHE", "REVIVES", "BONES", "PUSH_MON", "HUMANOID"]
     },{
     "type" : "MONSTER",
     "id" : "mon_zombie_runner",
@@ -2675,7 +2704,7 @@
     "death_function":["NORMAL"],
     "special_attacks":[ ["BITE", 5]],
     "description":"This recently-risen body moves quickly, darting its head back and forth and gnawing at its hands.",
-    "flags":["SEES", "HEARS", "SMELLS", "WARM", "BASHES", "POISON", "NO_BREATHE", "REVIVES", "BONES", "PUSH_MON"]
+    "flags":["SEES", "HEARS", "SMELLS", "WARM", "BASHES", "POISON", "NO_BREATHE", "REVIVES", "BONES", "PUSH_MON", "HUMANOID"]
     },{
     "type" : "MONSTER",
     "id" : "mon_zombie_hunter",
@@ -2708,7 +2737,7 @@
     "death_function":["NORMAL"],
     "special_attacks":[["LEAP", 5], ["BITE", 5]],
     "description":"This once-human body is barely recognizable, scrambling about on all fours, its nails and teeth both sharpened into dangerous looking spikes.",
-    "flags":["SEES", "HEARS", "SMELLS", "WARM", "BASHES", "POISON", "NO_BREATHE", "REVIVES", "BONES", "CLIMBS", "PUSH_MON"]
+    "flags":["SEES", "HEARS", "SMELLS", "WARM", "BASHES", "POISON", "NO_BREATHE", "REVIVES", "BONES", "CLIMBS", "PUSH_MON", "HUMANOID"]
     },{
     "type" : "MONSTER",
     "id" : "mon_zombie_predator",
@@ -2738,7 +2767,7 @@
     "death_function":["NORMAL"],
     "special_attacks":[["LEAP", 5], ["BITE", 5], ["IMPALE", 25]],
     "description":"With its joints in odd places and angles, this humanoid creature prowls across the landscape with suprising speed.  Its teeth and arms are sharpened into fine points, and black ooze seeps out from cuts between its muscles.",
-    "flags":["SEES", "HEARS", "SMELLS", "WARM", "BASHES", "POISON", "NO_BREATHE", "REVIVES", "BONES", "PUSH_MON"]
+    "flags":["SEES", "HEARS", "SMELLS", "WARM", "BASHES", "POISON", "NO_BREATHE", "REVIVES", "BONES", "PUSH_MON", "HUMANOID"]
     },{
     "type" : "MONSTER",
     "id" : "mon_zombie_hollow",
@@ -2766,7 +2795,7 @@
     "death_function":"BLOBSPLIT",
     "special_attacks":[["STRETCH_BITE", 10], ["STRETCH_ATTACK", 5]],
     "description":"Black hollow eyes survey the surroundings as the zombie stretches and bends in ways that whoever the original body belonged to never could.  The only thing that seems solid, on this flexible black-veined body, is the rows of sharp black teeth.  You get the feeling that the only human thing remaining is the skin, worn as one would wear clothes.",
-    "flags":["SEES", "HEARS", "SMELLS", "WARM", "BASHES", "GROUP_BASH", "POISON", "NO_BREATHE"]   
+    "flags":["SEES", "HEARS", "SMELLS", "WARM", "BASHES", "GROUP_BASH", "POISON", "NO_BREATHE", "HUMANOID"]   
     },{
     "type" : "MONSTER",
     "id" : "mon_zombie_child",
@@ -2802,7 +2831,7 @@
     "hp":40,
     "death_function":["NORMAL"],
     "description":"It was only a child, and little is different about it now aside from the hungry look in its eyes.  You'd be hard pressed to not feel like you were killing an actual child by putting it down.",
-    "flags":["SEES", "HEARS", "SMELLS", "STUMBLES", "WARM", "BASHES", "BLEED", "POISON", "GUILT", "NO_BREATHE", "REVIVES", "BONES"],
+    "flags":["SEES", "HEARS", "SMELLS", "STUMBLES", "WARM", "BASHES", "BLEED", "POISON", "GUILT", "NO_BREATHE", "REVIVES", "BONES", "HUMANOID"],
     "categories":["CLASSIC"]
     },{
         "type" : "MONSTER",
@@ -2865,7 +2894,7 @@
     "death_function":"MELT",
     "special_attacks":[["LUNGE", 20]],
     "description":"This rotting corpse seeps a glowing ooze from its lesions.  A strange tattered jumpsuit marks it as an oddity across the wasteland.",
-    "flags":["SEES", "HEARS", "SMELLS", "STUMBLES", "WARM", "BASHES", "GROUP_BASH", "NOGIB", "BONES"]
+    "flags":["SEES", "HEARS", "SMELLS", "STUMBLES", "WARM", "BASHES", "GROUP_BASH", "NOGIB", "BONES", "HUMANOID"]
     },{
     "type" : "MONSTER",
     "id" : "mon_irradiated_wanderer_2",
@@ -2899,7 +2928,7 @@
     "death_function":"MELT",
     "special_attacks":[["LUNGE", 15]],
     "description":"This rotting corpse seeps a glowing ooze from its lesions.  A strange tattered jumpsuit marks it as an oddity across the wasteland.",
-    "flags":["SEES", "HEARS", "SMELLS", "STUMBLES", "WARM", "BASHES", "GROUP_BASH", "NOGIB", "BONES"]
+    "flags":["SEES", "HEARS", "SMELLS", "STUMBLES", "WARM", "BASHES", "GROUP_BASH", "NOGIB", "BONES", "HUMANOID"]
     },{
     "type" : "MONSTER",
     "id" : "mon_irradiated_wanderer_3",
@@ -2933,7 +2962,7 @@
     "death_function":"MELT",
     "special_attacks":[["LUNGE", 10]],
     "description":"This rotting corpse seeps a glowing ooze from its lesions.  A strange tattered jumpsuit marks it as an oddity across the wasteland.",
-    "flags":["SEES", "HEARS", "SMELLS", "STUMBLES", "WARM", "BASHES", "GROUP_BASH", "NOGIB", "BONES"]
+    "flags":["SEES", "HEARS", "SMELLS", "STUMBLES", "WARM", "BASHES", "GROUP_BASH", "NOGIB", "BONES", "HUMANOID"]
     },{
     "type" : "MONSTER",
     "id" : "mon_irradiated_wanderer_4",
@@ -2967,7 +2996,7 @@
     "death_function":"MELT",
     "special_attacks":[["LUNGE", 5]],
     "description":"This rotting corpse seeps a glowing ooze from its lesions.  A strange tattered jumpsuit marks it as an oddity across the wasteland.",
-    "flags":["SEES", "HEARS", "SMELLS", "STUMBLES", "WARM", "BASHES", "GROUP_BASH", "NOGIB", "BONES"]
+    "flags":["SEES", "HEARS", "SMELLS", "STUMBLES", "WARM", "BASHES", "GROUP_BASH", "NOGIB", "BONES", "HUMANOID"]
     },{
     "type" : "MONSTER",
     "id" : "mon_charred_nightmare",
@@ -3000,7 +3029,7 @@
     "death_function":"MELT",
     "special_attacks":[["LONGSWIPE", 8]],
     "description":"Intense radiation has spurred a unique form of necrosis and regeneration, it is impossible to tell if this creature was ever human.",
-    "flags":["SEES", "HEARS", "SMELLS", "STUMBLES", "WARM", "BASHES", "GROUP_BASH", "NOGIB", "BONES"]
+    "flags":["SEES", "HEARS", "SMELLS", "STUMBLES", "WARM", "BASHES", "GROUP_BASH", "NOGIB", "BONES", "HUMANOID"]
     },{
     "type" : "MONSTER",
     "id" : "mon_triffid",
@@ -5123,7 +5152,7 @@
     "hp":80,
     "death_function":["NORMAL"],
     "description":"A crazed individual, the bloody scars on the side of its shaved head suggest some sort of partial lobotomy",
-    "flags":["SEES", "HEARS", "SMELLS", "WARM", "BASHES", "GROUP_BASH", "BLEED", "HUMAN", "POISON", "REVIVES", "BONES"]
+    "flags":["SEES", "HEARS", "SMELLS", "WARM", "BASHES", "GROUP_BASH", "BLEED", "HUMAN", "POISON", "REVIVES", "BONES", "HUMANOID"]
     },{
     "type" : "MONSTER",
     "id" : "mon_homunculus",
@@ -5149,7 +5178,7 @@
     "hp":120,
     "death_function":["NORMAL"],
     "description":"A pale hairless man with an impressive athletic physique.  Its lidless eyes are totally black, and seeping with blood.",
-    "flags":["SEES", "HEARS", "SMELLS", "WARM", "BASHES", "GROUP_BASH", "BLEED", "HUMAN", "REVIVES", "CLIMBS"]
+    "flags":["SEES", "HEARS", "SMELLS", "WARM", "BASHES", "GROUP_BASH", "BLEED", "HUMAN", "REVIVES", "CLIMBS", "HUMANOID"]
     },{
     "type" : "MONSTER",
     "id" : "mon_blood_sacrifice",
@@ -5176,7 +5205,7 @@
     "death_function":["NORMAL"],
     "special_attacks":[["FEAR_PARALYZE", 0], ["BITE", 5]],
     "description":"A defiled human body, once living.  Tortured to death long ago, it remains chained to the altar, the putrescent flays of its peeled skin quivering like so much flotsam upon a murky pond.",
-    "flags":["SEES", "HEARS", "SMELLS", "WARM", "BLEED", "IMMOBILE", "GUILT", "POISON", "REVIVES", "BONES"]
+    "flags":["SEES", "HEARS", "SMELLS", "WARM", "BLEED", "IMMOBILE", "GUILT", "POISON", "REVIVES", "BONES", "HUMANOID"]
     },{
     "type" : "MONSTER",
     "id" : "mon_flesh_angel",
@@ -5203,7 +5232,7 @@
     "death_function":["NORMAL"],
     "special_attacks":[["FEAR_PARALYZE", 0], ["BITE", 5]],
     "description":"A tall and slender man lacking skin and any normalcy of countenance.  Wings of muscle curl forth from its back and a third eye dominates the forehead.",
-    "flags":["SEES", "HEARS", "SMELLS", "WARM", "BLEED", "HARDTOSHOOT", "ATTACKMON", "HUMAN", "POISON", "REVIVES", "BONES"]
+    "flags":["SEES", "HEARS", "SMELLS", "WARM", "BLEED", "HARDTOSHOOT", "ATTACKMON", "HUMAN", "POISON", "REVIVES", "BONES", "HUMANOID"]
     },{
     "type" : "MONSTER",
     "id" : "mon_eyebot",
@@ -6205,7 +6234,7 @@
     "death_function":"NORMAL",
     "special_attacks":[["BRANDISH", 10]],
     "description":"Living in the woods, \nkilling for sport, \neating all the bodies, \nactual cannibal Shia LaBeouf.",
-    "flags":["SEES", "HEARS", "WARM", "BASHES", "POISON", "BLEED", "NO_BREATHE"],
+    "flags":["SEES", "HEARS", "WARM", "BASHES", "POISON", "BLEED", "NO_BREATHE", "HUMANOID"],
     "anger_triggers":["STALK", "PLAYER_WEAK", "HURT", "PLAYER_CLOSE", "BONES"],
     "fear_triggers":["FIRE"]
     },{
@@ -6354,7 +6383,7 @@
     "special_attacks":[["BIO_OP_TAKEDOWN", 20]],
     "special_when_hit":["ZAPBACK", 75],
     "description":"This armored and augmented soldier's bionics crackle with energy.  Worse, it appears to remember its training.",
-    "flags":["SEES", "HEARS", "SMELLS", "WARM", "BASHES", "GROUP_BASH", "POISON", "BLEED", "CBM_OP", "ACIDPROOF", "NO_BREATHE", "REVIVES", "BONES"]
+    "flags":["SEES", "HEARS", "SMELLS", "WARM", "BASHES", "GROUP_BASH", "POISON", "BLEED", "CBM_OP", "ACIDPROOF", "NO_BREATHE", "REVIVES", "BONES", "HUMANOID"]
     },{
     "type" : "MONSTER",
     "id" : "mon_zombie_armored",
@@ -6382,7 +6411,7 @@
     "hp":120,
     "death_function":["NORMAL"], 
     "description":"Despite being encased in a what was once a nigh-impenetrable suit of power armor, something still managed to kill this soldier.",
-    "flags":["SEES", "HEARS", "SMELLS", "WARM", "BASHES", "GROUP_BASH", "POISON", "BLEED", "ACIDPROOF", "NO_BREATHE", "REVIVES", "BONES"],
+    "flags":["SEES", "HEARS", "SMELLS", "WARM", "BASHES", "GROUP_BASH", "POISON", "BLEED", "ACIDPROOF", "NO_BREATHE", "REVIVES", "BONES", "HUMANOID"],
     "categories":["CLASSIC"]
     },{
     "type" : "MONSTER",
@@ -6469,7 +6498,7 @@
     "death_function":"JACKSON",
     "special_attacks":[["JACKSON", 0]],
     "description":"And though you fight to stay alive, \nYour body starts to shiver. \nFor no mere mortal can resist, \nThe evil of the thriller.",
-    "flags":["SEES", "SMELLS", "WARM", "BASHES", "BLEED", "NO_BREATHE", "BONES", "POISON"]
+    "flags":["SEES", "SMELLS", "WARM", "BASHES", "BLEED", "NO_BREATHE", "BONES", "POISON", "HUMANOID"]
     },{
     "type" : "MONSTER",
     "id" : "mon_zombie_dancer",
@@ -6498,7 +6527,7 @@
     "death_function":"NORMAL",
     "special_attacks":[["DANCE", 30]],
     "description":"The foulest stench is in the air, \nThe funk of forty thousand years, \nAnd grisly ghouls from every tomb, \nAre closing in to seal your doom!\n\nThe dancer doesn't even notice you, it seems like something nearby is controlling it.",
-    "flags":["WARM", "BASHES", "DESTROYS", "LEATHER", "NO_BREATHE", "REGENERATES_50", "BONES", "POISON", "FAT"]
+    "flags":["WARM", "BASHES", "DESTROYS", "LEATHER", "NO_BREATHE", "REGENERATES_50", "BONES", "POISON", "FAT", "HUMANOID"]
     }, {
     "type" : "MONSTER",
     "id" : "mon_riotbot",
@@ -6561,7 +6590,7 @@
     "death_function":["NORMAL"],
     "special_attacks":[["PULL_METAL_WEAPON", 25], ["BITE", 20]],
     "description":"Still wearing its work clothes and hardhat, this zombie likely used to work on power lines or other electrical equipment.",
-    "flags":["SEES", "HEARS", "SMELLS", "WARM", "BASHES", "GROUP_BASH", "POISON", "NO_BREATHE", "REVIVES", "CBM_TECH", "BONES"]
+    "flags":["SEES", "HEARS", "SMELLS", "WARM", "BASHES", "GROUP_BASH", "POISON", "NO_BREATHE", "REVIVES", "CBM_TECH", "BONES", "HUMANOID"]
     },{
     "type" : "MONSTER",
     "id" : "mon_zombie_brute_shocker",
@@ -6592,7 +6621,7 @@
     "special_attacks":[["SHOCKSTORM", 15], ["SMASH", 30]],
     "special_when_hit":["ZAPBACK", 75],
     "description":"A huge beast covered in visible scarring from what you can only guess was 'research'.  Being near it, you can hear a slight humming, like that of an electrical transformer.",
-    "flags":["SEES", "HEARS", "SMELLS", "STUMBLES", "WARM", "BASHES", "GROUP_BASH", "POISON", "ELECTRIC", "CBM_SUBS", "NO_BREATHE", "REVIVES", "BONES"]
+    "flags":["SEES", "HEARS", "SMELLS", "STUMBLES", "WARM", "BASHES", "GROUP_BASH", "POISON", "ELECTRIC", "CBM_SUBS", "NO_BREATHE", "REVIVES", "BONES", "HUMANOID"]
     },{
     "type" : "MONSTER",
     "id" : "mon_giant_cockroach",

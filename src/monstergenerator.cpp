@@ -227,6 +227,7 @@ void MonsterGenerator::init_attack()
     attack_map["DISAPPEAR"] = &mattack::disappear;
     attack_map["FORMBLOB"] = &mattack::formblob;
     attack_map["CALLBLOBS"] = &mattack::callblobs;
+    attack_map["BRAWL_AURA"] = &mattack::brawl_aura;
     attack_map["JACKSON"] = &mattack::jackson;
     attack_map["DANCE"] = &mattack::dance;
     attack_map["DOGTHING"] = &mattack::dogthing;
@@ -379,6 +380,8 @@ void MonsterGenerator::init_flags()
     flag_map["GROUP_MORALE"] = MF_GROUP_MORALE;
     flag_map["INTERIOR_AMMO"] = MF_INTERIOR_AMMO;
     flag_map["PUSH_MON"] = MF_PUSH_MON;
+    flag_map["BRAWL"] = MF_BRAWL;
+    flag_map["HUMANOID"] = MF_HUMANOID;
 }
 
 void MonsterGenerator::set_species_ids( mtype &mon )

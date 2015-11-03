@@ -13416,14 +13416,14 @@ int player::climbing_cost( const tripoint &from, const tripoint &to ) const
 // doesn't seem to be a good place to put it right now.
 
 // Basic logistic function.
-double player::logistic(double t) const
+double player::logistic(double t)
 {
     return 1 / (1 + exp(-t));
 }
 
 // Logistic curve [-6,6], flipped and scaled to
 // range from 1 to 0 as pos goes from min to max.
-double player::logistic_range(int min, int max, int pos) const
+double player::logistic_range(int min, int max, int pos)
 {
     const double LOGI_CUTOFF = 4;
     const double LOGI_MIN = logistic(-LOGI_CUTOFF);

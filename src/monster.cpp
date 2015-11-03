@@ -92,6 +92,7 @@ monster::monster()
     wandf = 0;
     hp = 60;
     moves = 0;
+    num_blocks = 0;
     def_chance = 0;
     friendly = 0;
     anger = 0;
@@ -117,6 +118,7 @@ monster::monster( const mtype_id& id )
     wandf = 0;
     type = &id.obj();
     moves = type->speed;
+    num_blocks = 0;
     Creature::set_speed_base(type->speed);
     hp = type->hp;
     for( auto &elem : type->sp_freq ) {
@@ -146,6 +148,7 @@ monster::monster( const mtype_id& id, const tripoint &p )
     wandf = 0;
     type = &id.obj();
     moves = type->speed;
+    num_blocks = 0;
     Creature::set_speed_base(type->speed);
     hp = type->hp;
     for( auto &elem : type->sp_freq ) {
@@ -528,6 +531,10 @@ bool monster::can_act() const
           ( !has_effect("stunned") && !has_effect("downed") && !has_effect("webbed") ) );
 }
 
+bool monster::can_block() const
+{
+    return ( num_blocks > 0 && ( has_flag( MF_BRAWL ) || has_effect( "brawl" ) ) );
+}
 
 int monster::sight_range( const int light_level ) const
 {
@@ -898,8 +905,80 @@ bool monster::is_dead_state() const {
 void monster::dodge_hit(Creature *, int) {
 }
 
-bool monster::block_hit(Creature *, body_part &, damage_instance &) {
-    return false;
+bool monster::block_hit(Creature *source, body_part &, damage_instance & dam) {
+
+    if (!can_block()) {
+        return false;
+    }
+
+    num_blocks--;
+
+    mod_moves( -type->attack_cost * 0.66 );
+
+    float total_phys_block = 5;
+    int block_score = 0;
+    block_score = 3 + get_melee() * 2;
+
+    const float physical_block_multiplier = player::logistic_range( 0, 40, block_score );
+    add_msg( "pbm: %d" ), physical_block_multiplier;
+    float total_damage = 0.0;
+    float damage_blocked = 0.0;
+    for ( auto &elem : dam.damage_units ) {
+        total_damage += elem.amount;
+        // block physical damage "normally"
+        if ( elem.type == DT_BASH || elem.type == DT_CUT || elem.type == DT_STAB ) {
+            // use up our flat block bonus first
+            float block_amount = std::min( total_phys_block, elem.amount );
+            total_phys_block -= block_amount;
+            elem.amount -= block_amount;
+            damage_blocked += block_amount;
+            if ( elem.amount <= std::numeric_limits<float>::epsilon() ) {
+                continue;
+            }
+
+            float previous_amount = elem.amount;
+            elem.amount *= physical_block_multiplier;
+            damage_blocked += previous_amount - elem.amount;
+        }
+    }
+
+    std::string damage_blocked_description;
+    float blocked_ratio = (total_damage - damage_blocked) / total_damage;
+    if ( blocked_ratio < std::numeric_limits<float>::epsilon() ) {
+        //~ Adjective in "You block <adjective> of the damage with your <weapon>.
+        damage_blocked_description = _( "all" );
+    } else if ( blocked_ratio < 0.2 ) {
+        //~ Adjective in "You block <adjective> of the damage with your <weapon>.
+        damage_blocked_description = _( "nearly all" );
+    } else if ( blocked_ratio < 0.4 ) {
+        //~ Adjective in "You block <adjective> of the damage with your <weapon>.
+        damage_blocked_description = _( "most" );
+    } else if ( blocked_ratio < 0.6 ) {
+        //~ Adjective in "You block <adjective> of the damage with your <weapon>.
+        damage_blocked_description = _( "a lot" );
+    } else if ( blocked_ratio < 0.8 ) {
+        //~ Adjective in "You block <adjective> of the damage with your <weapon>.
+        damage_blocked_description = _( "some" );
+    } else if ( blocked_ratio > std::numeric_limits<float>::epsilon() ) {
+        //~ Adjective in "You block <adjective> of the damage with your <weapon>.
+        damage_blocked_description = _( "a little" );
+    } else {
+        //~ Adjective in "You block <adjective> of the damage with your <weapon>.
+        damage_blocked_description = _( "none " );
+    }
+    add_msg_player_or_npc( _( "The %1$s blocks %2$s %3$s attack damage!" ),
+                           _( "The %1$s blocks %2$s %3$s attack damage!" ),
+                           disp_name().c_str(),
+                           damage_blocked_description.c_str(),
+                           source->disp_name(true).c_str() );
+   
+    add_msg_player_or_npc( _( "The %1$s catches %2$s attack, and counters!" ),
+                           _( "The %1$s catches %2$s attack, and counters!" ),
+                           disp_name().c_str(),
+                           source->disp_name( true ).c_str() );
+    melee_attack( *source, false );
+
+    return true;
 }
 
 void monster::absorb_hit(body_part, damage_instance &dam) {
@@ -908,9 +987,10 @@ void monster::absorb_hit(body_part, damage_instance &dam) {
     }
 }
 
-void monster::melee_attack(Creature &target, bool, const matec_id&) {
-    mod_moves( -type->attack_cost );
+void monster::melee_attack(Creature &target, bool allow_special, const matec_id&) {
+    int move_cost = -type->attack_cost;
     if (type->melee_dice == 0) { // We don't attack, so just return
+        mod_moves( move_cost );
         return;
     }
     add_effect("hit_by_player", 3); // Make us a valid target for a few turns
@@ -919,43 +999,70 @@ void monster::melee_attack(Creature &target, bool, const matec_id&) {
         add_effect("run", 4);
     }
 
+    // Gives monster equivalent of player's MA brawl feint, power attack (knockback and stun), trip, counter techniques.
+    bool brawl = (allow_special && ( has_effect( "brawl" ) || has_flag( MF_BRAWL ) ) );
+
     bool u_see_me = g->u.sees(*this);
 
     body_part bp_hit;
     //int highest_hit = 0;
 
     damage_instance damage;
-    if(!is_hallucination()) {
-        if (type->melee_dice > 0) {
-            damage.add_damage(DT_BASH,
-                    dice(type->melee_dice,type->melee_sides));
-        }
-        if (type->melee_cut > 0) {
-            damage.add_damage(DT_CUT, type->melee_cut);
-        }
-    }
-
+    
+    int bash_dmg_bonus = 0;
+    
     dealt_damage_instance dealt_dam;
     int hitspread = target.deal_melee_attack(this, hit_roll());
-    if (hitspread >= 0) {
+    if ( !is_hallucination() && hitspread >= 0 ) {
+        if ( brawl ) {
+            if ( one_in( 10 - get_melee() ) ) {
+                if (one_in( 2 )) {
+                    target.knock_back_from( pos() );
+                    target.add_effect( "stunned", 1 );
+                    target.add_msg_player_or_npc( _( "The %s sends you reeling!" ),
+                                                  _( "The %s send <npcname> reeling!" ),
+                                                  disp_name().c_str() );
+
+                } else if ( !target.has_effect( "downed" ) && target.get_throw_resist() == 0 ) {
+                    target.add_effect( "downed", rng( 1, 2 ) );
+                    target.add_msg_player_or_npc( _( "The %s trips you!" ),
+                                                  _( "The %s trips <npcname>!" ),
+                                                  disp_name().c_str() );
+                    bash_dmg_bonus += 3;
+                }
+            }
+        }
+
+        if ( type->melee_dice > 0 ) {
+            damage.add_damage( DT_BASH,
+                (dice( type->melee_dice, type->melee_sides ) + bash_dmg_bonus) );
+        }
+        if ( type->melee_cut > 0 ) {
+            damage.add_damage( DT_CUT, type->melee_cut );
+        }
+
         target.deal_melee_hit(this, hitspread, false, damage, dealt_dam);
     }
+
     bp_hit = dealt_dam.bp_hit;
+    
 
     if (hitspread < 0) { // a miss
         // TODO: characters practice dodge when a hit misses 'em
-        if (target.is_player()) {
-            if (u_see_me) {
-                add_msg(_("You dodge %s."), disp_name().c_str());
-            } else {
-                add_msg(_("You dodge an attack from an unseen source."));
-            }
+        if (!brawl) {
+            target.add_msg_player_or_npc( _( "You dodge the %s attack!" ),
+                                          _( "The <npcname> dodges %s attack!" ),
+                                          disp_name(true).c_str() );
         } else {
-            if (u_see_me) {
-                add_msg(_("The %1$s dodges %2$s attack."), name().c_str(),
-                            target.disp_name(true).c_str());
-            }
+            move_cost /= 3;
+            target.add_msg_player_or_npc( _( "The %1$s feints at %2$s!" ),
+                                          _( "The %1$s feints at <npcname>!" ),
+                                          disp_name().c_str(),
+                                          target.disp_name().c_str() );
         }
+
+
+
     //Hallucinations always produce messages but never actually deal damage
     } else if (is_hallucination() || dealt_dam.total_damage() > 0) {
         if (target.is_player()) {
@@ -1008,6 +1115,7 @@ void monster::melee_attack(Creature &target, bool, const matec_id&) {
         if(one_in(7)) {
             die( nullptr );
         }
+        mod_moves( move_cost );
         return;
     }
 
@@ -1031,6 +1139,7 @@ void monster::melee_attack(Creature &target, bool, const matec_id&) {
             g->zombie(i).anger += anger_adjust;
         }
     }
+    mod_moves( move_cost );
 }
 
 void monster::hit_monster(monster &other)
@@ -1754,6 +1863,9 @@ void monster::process_effects()
                 hp = type->hp;
             }
         }
+    }
+    if ( ( has_flag(MF_BRAWL) || has_effect("brawl") ) && num_blocks < 1 ) {
+        num_blocks++;
     }
 
     //Monster will regen morale and aggression if it is on max HP

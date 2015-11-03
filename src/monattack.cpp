@@ -65,6 +65,7 @@ const mtype_id mon_triffid( "mon_triffid" );
 const mtype_id mon_turret_searchlight( "mon_turret_searchlight" );
 const mtype_id mon_zombie_dancer( "mon_zombie_dancer" );
 const mtype_id mon_zombie_jackson( "mon_zombie_jackson" );
+const mtype_id mon_zombie_stalwart( "mon_zombie_stalwart" );
 
 const skill_id skill_melee( "melee" );
 const skill_id skill_gun( "gun" );
@@ -2093,7 +2094,20 @@ void mattack::callblobs(monster *z, int index)
     // This is telepathy, doesn't take any moves.
     z->reset_special(index); // Reset timer
 }
-
+void mattack::brawl_aura( monster *z, int index ) 
+{
+    for ( size_t i = 0; i < g->num_zombies(); i++ ) {
+        monster &zed = g->zombie( i );
+        if (zed.type->in_species( ZOMBIE ) &&
+            zed.has_flag(MF_HUMANOID) &&
+            z->attitude_to( zed ) != Creature::Attitude::A_HOSTILE &&
+            rl_dist( z->pos(), zed.pos() ) <= 75 &&
+            zed.type->id != mon_zombie_stalwart ) {
+                zed.add_effect("brawl", 150);
+            }
+     }
+    z->reset_special( index );
+}
 void mattack::jackson(monster *z, int index)
 {
     // Jackson draws nearby zombies into the dance.
