@@ -920,7 +920,6 @@ bool monster::block_hit(Creature *source, body_part &, damage_instance & dam) {
     block_score = 3 + get_melee() * 2;
 
     const float physical_block_multiplier = player::logistic_range( 0, 40, block_score );
-    add_msg( "pbm: %d" ), physical_block_multiplier;
     float total_damage = 0.0;
     float damage_blocked = 0.0;
     for ( auto &elem : dam.damage_units ) {
