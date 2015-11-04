@@ -408,6 +408,7 @@ class Creature
         virtual void set_cut_bonus(int ncut);
         virtual void mod_speed_bonus(int nspeed);
         virtual void mod_dodge_bonus(int ndodge);
+        virtual void mod_melee_bonus( int nmelee );
         virtual void mod_block_bonus(int nblock);
         virtual void mod_hit_bonus(int nhit);
         virtual void mod_bash_bonus(int nbash);
@@ -479,6 +480,7 @@ class Creature
 
         int speed_bonus;
         int dodge_bonus;
+        int melee_bonus;
         int block_bonus;
         int hit_bonus;
         int bash_bonus;

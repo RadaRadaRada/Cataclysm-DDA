@@ -533,7 +533,7 @@ bool monster::can_act() const
 
 bool monster::can_block() const
 {
-    return ( num_blocks > 0 && ( has_flag( MF_BRAWL ) || has_effect( "brawl" ) ) );
+    return ( has_flag( MF_BRAWL ) || has_effect( "brawl" ) );
 }
 
 int monster::sight_range( const int light_level ) const
@@ -907,7 +907,7 @@ void monster::dodge_hit(Creature *, int) {
 
 bool monster::block_hit(Creature *source, body_part &, damage_instance & dam) {
 
-    if (!can_block()) {
+    if (!can_block() || num_blocks < 1) {
         return false;
     }
 
@@ -1429,14 +1429,15 @@ int monster::get_armor_bash(body_part bp) const
 }
 
 int monster::hit_roll() const {
+    int melee = get_melee();
     //Unstable ground chance of failure
     if (has_effect("bouldering")) {
-        if(one_in(type->melee_skill)) {
+        if(one_in(melee)) {
             return 0;
         }
     }
 
-    return dice(type->melee_skill, 10);
+    return dice(melee, 10);
 }
 
 bool monster::has_grab_break_tec() const
@@ -1476,30 +1477,31 @@ int monster::get_dodge() const
     if (has_effect("downed")) {
         return 0;
     }
-    int ret = type->sk_dodge;
+    int ret = type->sk_dodge + dodge_bonus;
     if (has_effect("lightsnare") || has_effect("heavysnare") || has_effect("beartrap") || has_effect("tied")) {
         ret /= 2;
     }
     if (moves <= 0 - 100 - get_speed()) {
         ret = rng(0, ret);
     }
-    return ret + get_dodge_bonus();
+    return ret;
 }
 
 int monster::get_melee() const
 {
-    return type->melee_skill;
+    return type->melee_skill + melee_bonus;
 }
 
 int monster::dodge_roll()
 {
+    int dodge = get_dodge();
     if (has_effect("bouldering")) {
-        if(one_in(type->sk_dodge)) {
+        if(one_in(dodge)) {
             return 0;
         }
     }
 
-    int numdice = get_dodge();
+    int numdice = dodge;
 
     switch (type->size) {
         case MS_TINY:
@@ -1517,9 +1519,9 @@ int monster::dodge_roll()
         case MS_MEDIUM:
             break; // keep default
     }
-
     numdice += get_speed() / 80;
     return dice(numdice, 10);
+    
 }
 
 float monster::fall_damage_mod() const
@@ -1819,7 +1821,21 @@ void monster::process_effects()
 
             mod_speed_bonus(it.get_mod("SPEED", reduced));
 
-            int val = it.get_mod("HURT", reduced);
+            int val = it.get_mod( "MELEE", reduced );
+            if ( val != 0 ) {
+                mod_melee_bonus( player::bound_mod_to_vals( type->melee_skill, val,
+                    it.get_max_val( "MELEE", reduced ),
+                    it.get_min_val( "MELEE", reduced ) ) );
+            }
+
+            val = it.get_mod( "DODGE", reduced );
+            if ( val != 0 ) {
+                mod_dodge_bonus( player::bound_mod_to_vals( type->sk_dodge, val,
+                    it.get_max_val( "DODGE", reduced ),
+                    it.get_min_val( "DODGE", reduced ) ) );
+            }
+
+            val = it.get_mod("HURT", reduced);
             if (val > 0) {
                 if(it.activated(calendar::turn, "HURT", val, reduced, mod)) {
                     apply_damage(nullptr, bp_torso, val);
@@ -1862,9 +1878,6 @@ void monster::process_effects()
                 hp = type->hp;
             }
         }
-    }
-    if ( ( has_flag(MF_BRAWL) || has_effect("brawl") ) && num_blocks < 1 ) {
-        num_blocks++;
     }
 
     //Monster will regen morale and aggression if it is on max HP

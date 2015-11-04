@@ -157,7 +157,13 @@
         "id": "brawl",
         "name": ["Aura of Brawl"],
 		"max_duration": 150,
-        "desc": ["AI tag used for giving monsters martial art like attacks.  This is a bug if you have it."]
+        "desc": ["Tag used for giving humanoid zombies enhanced combat abilities and martial art like attacks .  This is a bug if you have it."],
+		"base_mods": {
+            "melee_mod": [2],
+			"melee_max_val": [6],
+            "dodge_mod": [2],
+			"dodge_max_val": [4]
+        }
     },
     {
         "//": "ACTUAL PLAYER EFFECTS START HERE",

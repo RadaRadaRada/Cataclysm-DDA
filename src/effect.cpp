@@ -167,6 +167,15 @@ bool effect_type::load_mod_data(JsonObject &jsobj, std::string member) {
         extract_effect(j, mod_data, "int_mod",          member, "INT",      "min");
         extract_effect(j, mod_data, "speed_mod",        member, "SPEED",    "min");
 
+        // Then skills
+        extract_effect( j, mod_data, "melee_mod",      member, "MELEE", "min" );
+        extract_effect( j, mod_data, "melee_min_val",  member, "MELEE", "min_val" );
+        extract_effect( j, mod_data, "melee_mmax_val", member, "MELEE", "max_val" );
+
+        extract_effect( j, mod_data, "dodge_mod",      member, "DODGE", "min" );
+        extract_effect( j, mod_data, "dodge_min_val",  member, "DODGE", "min_val" );
+        extract_effect( j, mod_data, "dodge_max_val", member, "DODGE", "max_val" );
+
         // Then pain
         extract_effect(j, mod_data, "pain_amount",      member, "PAIN",     "amount");
         extract_effect(j, mod_data, "pain_min",         member, "PAIN",     "min");

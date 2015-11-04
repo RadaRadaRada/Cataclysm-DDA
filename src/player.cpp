@@ -5823,7 +5823,7 @@ void player::add_pain_msg(int val, body_part bp) const
     }
 }
 
-static int bound_mod_to_vals(int val, int mod, int max, int min)
+int player::bound_mod_to_vals(int val, int mod, int max, int min)
 {
     if (val + mod > max && max != 0) {
         mod = std::max(max - val, 0);

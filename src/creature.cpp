@@ -104,6 +104,7 @@ void Creature::reset_bonuses()
 
     speed_bonus = 0;
     dodge_bonus = 0;
+    melee_bonus = 0;
     block_bonus = 0;
     hit_bonus = 0;
     bash_bonus = 0;
@@ -383,7 +384,6 @@ void Creature::deal_melee_hit(Creature *source, int hit_spread, bool critical_hi
 
     body_part bp_hit = select_body_part(source, hit_spread);
     block_hit(source, bp_hit, d);
-
     // Bashing crit
     if( critical_hit && !is_immune_effect( "stunned" ) ) {
         if( d.type_damage(DT_BASH) * hit_spread > get_hp_max() ) {
@@ -1278,6 +1278,9 @@ void Creature::mod_speed_bonus(int nspeed)
 void Creature::mod_dodge_bonus(int ndodge)
 {
     dodge_bonus += ndodge;
+}
+void Creature::mod_melee_bonus( int nmelee ) {
+    melee_bonus += nmelee;
 }
 void Creature::mod_block_bonus(int nblock)
 {

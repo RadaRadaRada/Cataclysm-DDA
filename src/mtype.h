@@ -141,8 +141,11 @@ enum m_flag : int {
     MF_INTERIOR_AMMO,       // Monster contain's its ammo inside itself, no need to load on launch. Prevents ammo from being dropped on disable.
     MF_CLIMBS,              // Monsters that can climb certain terrain and furniture
     MF_PUSH_MON,            // Monsters that can push creatures out of their way
-    MF_BRAWL,               // Monster uses a number of special attacks.
-    MF_HUMANOID,            // Used to tell zombie humans from zombie non-humans.
+    MF_BRAWL,               // Monster uses a number of MA type attacks: feint: recovers part of used up moves then the attack misses it's target;
+                            //                                           power attack: attacks may knockback and stun the target;
+                            //                                           trip: attacks may knockdown the target;
+                            //                                           block counter: blocks part of melee damage dealt to monster and triggers a counter attack.
+    MF_HUMANOID,            // Used to tell zombie humans apart from zombie non-humans.
     MF_MAX                  // Sets the length of the flags - obviously must be LAST
 };
 

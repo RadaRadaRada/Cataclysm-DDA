@@ -385,7 +385,6 @@ class monster : public Creature, public JsonSerializer, public JsonDeserializer
 
     private:
         int hp;
-        int num_blocks;
         std::vector<int> sp_timeout;
         tripoint goal;
         tripoint position;
